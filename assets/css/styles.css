@@ -11,6 +11,7 @@ html{
 
 body {
     font-size: var(--md);
+    overflow-x: hidden;
 }
 
 .no__scroll {
@@ -39,15 +40,21 @@ body {
     margin: auto;
 }
 
+.container.wrapped p {
+    line-height: 1.6;
+}
+
 .grid__container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--md);
+    padding: var(--md) 0;
 }
 
 .container__flex {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    
 }
 
 header, footer{
@@ -88,6 +95,16 @@ header nav ul li a:hover{
     top: var(--sm);
     right: var(--sm);
     z-index: 10;
+    color: var(--secondary);
+    background-color: var(--primary);
+    border-radius: 50%;
+    padding: var(--sm);
+    transition: all 0.7s ease;
+}
+
+.menu__btn:hover {
+    scale: 1.1;
+    transition: all 0.7s ease;
 }
 
 .img-container{
@@ -125,12 +142,22 @@ h3{
     margin-bottom: var(--md);
 }
 
+h4 {
+    line-height: 2.5;
+}
 .footer__menu {
     list-style: none;
 }
 
 .footer__menu li a {
     text-decoration: none;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--md) 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -150,7 +177,8 @@ h3{
 
 @media screen and (max-width: 767px) {
     header nav {
-        background-color: var(--pink);
+        background-color: rgba(255, 124, 139, 0.434);
+        backdrop-filter: blur(10px);
         position: absolute;
         top: 0;
         left: 0;
